@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "vite build && git add docs -f && git commit -m 'build: update docs' && git push origin `git subtree split --prefix docs main`:gh-pages --force"
   },
   "dependencies": {
     "clsx": "^2.1.1",
