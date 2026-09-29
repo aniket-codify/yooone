@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles, MapPin, Building, Trees } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { projectData } from '../data/projectData';
 
 export default function Hero({ onEnquireClick, onExploreClick }) {
@@ -40,59 +40,36 @@ export default function Hero({ onEnquireClick, onExploreClick }) {
       <div className="wrap hero-content-wrap">
         <div className="hero-card">
           <div className="hero-card-badge">
-            <Sparkles size={13} />
-            <span>New Launch · Tower 2 – Serenity</span>
+            NEW LAUNCH
           </div>
 
-          <h1>{projectData.name}</h1>
-          <p className="hero-subtitle">Forest View 3.5 &amp; 4.5 Bed Luxury Residences</p>
-          <p className="hero-loc">Branded by Sussanne Khan for YOO · NIBM, Pune</p>
+          <div className="hero-card-top">
+            <h1>{projectData.name}</h1>
+            <p className="by">Branded by Sussanne Khan for YOO</p>
+            <p className="at">At NIBM, South Pune</p>
+          </div>
 
           <div className="hero-highlights">
-            <div className="hero-hl-item">
-              <span className="hl-dot">&#9670;</span>
-              <span><b>200 Acres Forest Backdrop:</b> Lifetime serene Sahyadri hill views</span>
+            <div>
+              <span className="dot">&#9670;</span> 200 Acres Forest Views — Sahyadri Hills
             </div>
-            <div className="hero-hl-item">
-              <span className="hl-dot">&#9670;</span>
-              <span><b>1.5-Acre Sky Realm:</b> Rooftop Sky Bar, Horizon Infinity Pool &amp; Lounge</span>
+            <div>
+              <span className="dot">&#9670;</span> 1.5-Acre Sky Realm: Infinity Pool &amp; Sky Bar
             </div>
-            <div className="hero-hl-item">
-              <span className="hl-dot">&#9670;</span>
-              <span><b>Low Density Privacy:</b> 4 towers, only 4 residences per floor</span>
-            </div>
-            <div className="hero-hl-item">
-              <span className="hl-dot">&#9670;</span>
-              <span><b>French Windows:</b> Seamless floor-to-ceiling panoramic glass</span>
+            <div>
+              <span className="dot">&#9670;</span> Four Access Corridors for Easy Entry/Exit
             </div>
           </div>
 
-          <div className="hero-pricing-box">
-            <div>
-              <div className="price-tag">₹3.01 Cr* Onwards</div>
-              <div className="price-sub">3.5 &amp; 4.5 BHK All Inclusive · CLP Plan</div>
-            </div>
-            <div>
-              <span style={{ fontSize: '11px', color: '#e7c789', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                Show Flat Ready
-              </span>
-            </div>
-          </div>
-
-          <div className="hero-card-actions">
+          <div className="hero-card-bottom">
+            <p className="configs">Premium <b>3.5 &amp; 4.5 BHK</b> Residences</p>
+            <p className="note">Starting ₹3.01 Cr* Onwards · Show Flat Ready</p>
             <button 
-              className="btn btn-gold" 
+              className="btn btn-gold hero-card-cta" 
               onClick={onEnquireClick}
               id="heroEnquireBtn"
             >
               Enquire Now
-            </button>
-            <button 
-              className="btn btn-line-dark" 
-              onClick={onExploreClick}
-              id="heroExploreBtn"
-            >
-              View Residences
             </button>
           </div>
         </div>

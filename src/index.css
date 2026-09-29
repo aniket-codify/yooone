@@ -437,25 +437,25 @@ nav.links a.active::after {
   z-index: 3;
   width: 100%;
   padding: 40px 0;
+  display: flex;
+  justify-content: center;
 }
 
+/* Titan Towers Style Hero Card */
 .hero-card {
-  max-width: 580px;
-  background: rgba(22, 17, 12, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  width: 100%;
+  max-width: 440px;
+  background: var(--white);
   border: 1px solid var(--gold-border);
-  border-radius: var(--radius-md);
-  padding: 40px 44px;
   box-shadow: var(--shadow-lg);
-  color: var(--cream);
+  overflow: hidden;
   animation: heroCardIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes heroCardIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -464,148 +464,189 @@ nav.links a.active::after {
 }
 
 .hero-card-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(193, 152, 92, 0.15);
-  border: 1px solid var(--gold);
+  background: var(--ink);
   color: var(--gold-bright);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 20px;
+  text-align: center;
+  font-size: 11.5px;
   font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.hero-card h1 {
-  font-size: clamp(38px, 4.5vw, 56px);
-  color: var(--cream);
-  line-height: 1.05;
-  margin-bottom: 8px;
-}
-
-.hero-card .hero-subtitle {
-  font-size: 19px;
-  color: var(--gold-bright);
-  font-family: "Cormorant Garamond", serif;
-  font-style: italic;
-  margin-bottom: 6px;
-}
-
-.hero-card .hero-loc {
-  font-size: 13.5px;
-  letter-spacing: 0.08em;
-  color: var(--text-light-muted);
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  padding: 11px 16px;
+  border-bottom: 1px solid rgba(193, 152, 92, 0.3);
+}
+
+.hero-card-top {
+  background: var(--white);
+  color: var(--ink);
+  text-align: center;
+  padding: 26px 24px 20px;
+}
+
+.hero-card-top h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0 0 6px;
+}
+
+.hero-card-top .by {
+  font-family: "Jost", sans-serif;
+  font-size: 13.5px;
+  color: #382e22;
+  margin: 0 0 4px;
+}
+
+.hero-card-top .at {
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  color: var(--gold-dim);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .hero-highlights {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 18px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 24px 0 28px;
   border-top: 1px solid rgba(193, 152, 92, 0.2);
   border-bottom: 1px solid rgba(193, 152, 92, 0.2);
-  padding: 20px 0;
 }
 
-.hero-hl-item {
+.hero-highlights > div {
+  font-size: 13.5px;
+  color: #f4f0e8;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 14.5px;
-  color: var(--cream);
+  gap: 10px;
+  text-align: left;
+  border-bottom: 1px dashed rgba(193, 152, 92, 0.25);
+  padding-bottom: 10px;
+  line-height: 1.35;
 }
 
-.hero-hl-item .hl-dot {
+.hero-highlights > div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-highlights .dot {
   color: var(--gold-bright);
-  font-size: 16px;
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
-.hero-pricing-box {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
+.hero-card-bottom {
+  background: var(--white);
+  color: var(--ink);
+  text-align: center;
+  padding: 20px 24px 24px;
 }
 
-.hero-pricing-box .price-tag {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 32px;
+.hero-card-bottom .configs {
+  font-size: 15.5px;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.hero-card-bottom .configs b {
   font-weight: 600;
-  color: var(--gold-bright);
+  color: var(--gold-dim);
 }
 
-.hero-pricing-box .price-sub {
-  font-size: 12px;
-  color: var(--text-light-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.hero-card-bottom .note {
+  font-size: 12.5px;
+  color: #6d6355;
+  margin: 0 0 16px;
 }
 
-.hero-card-actions {
+.hero-card-cta {
+  background: var(--gold);
+  color: var(--ink);
+  width: 100%;
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
 }
 
+.hero-card-cta:hover {
+  background: var(--gold-bright);
+  transform: translateY(-1px);
+}
+
+/* Translucent Circle Carousel Arrows */
 .hero-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(17, 14, 10, 0.6);
-  border: 1px solid var(--gold-border);
-  color: var(--gold-bright);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 4;
+  z-index: 10;
   transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .hero-arrow:hover {
   background: var(--gold);
   color: var(--ink);
+  border-color: var(--gold);
 }
 
 .hero-arrow.prev {
-  left: 24px;
+  left: 20px;
 }
 
 .hero-arrow.next {
-  right: 24px;
+  right: 20px;
 }
 
 .hero-dots {
   position: absolute;
-  bottom: 30px;
-  right: 40px;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 4;
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hero-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.4);
   border: 1px solid transparent;
   transition: var(--transition);
 }
 
 .hero-dot.active {
   background: var(--gold-bright);
-  width: 28px;
-  border-radius: 6px;
+  width: 22px;
+  border-radius: 4px;
 }
 
 /* ================= 3. STATS STRIP ================= */
@@ -1711,6 +1752,82 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+    padding: 72px 14px 28px;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.22);
+  }
+  .hero-bottom-fade {
+    height: 60px;
+    opacity: 0.7;
+  }
+  .hero-content-wrap {
+    padding: 0;
+  }
+  .hero-card {
+    max-width: 345px;
+    margin: 0 auto;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+  }
+  .hero-card-badge {
+    padding: 8px 12px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+  .hero-card-top {
+    padding: 20px 16px 14px;
+  }
+  .hero-card-top h1 {
+    font-size: 32px;
+  }
+  .hero-card-top .by {
+    font-size: 12.5px;
+  }
+  .hero-card-top .at {
+    font-size: 11.5px;
+  }
+  .hero-highlights {
+    padding: 14px 18px;
+    gap: 10px;
+  }
+  .hero-highlights > div {
+    font-size: 12.5px;
+    padding-bottom: 8px;
+  }
+  .hero-card-bottom {
+    padding: 16px 18px 20px;
+  }
+  .hero-card-bottom .configs {
+    font-size: 14px;
+  }
+  .hero-card-bottom .note {
+    font-size: 11.5px;
+    margin-bottom: 12px;
+  }
+  .hero-card-cta {
+    padding: 12px 16px;
+    font-size: 12.5px;
+  }
+  /* Visible arrows flanking the card on mobile */
+  .hero-arrow {
+    display: flex !important;
+    width: 38px;
+    height: 38px;
+    z-index: 20;
+  }
+  .hero-arrow.prev {
+    left: 4px;
+  }
+  .hero-arrow.next {
+    right: 4px;
+  }
+  .hero-dots {
+    bottom: 8px;
+  }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1721,13 +1838,7 @@ footer {
   .footer-top {
     grid-template-columns: 1fr;
   }
-  .hero-card {
-    padding: 28px 22px;
-  }
   .enquiry-form-col {
     padding: 36px 20px;
-  }
-  .hero-arrow {
-    display: none;
   }
 }
