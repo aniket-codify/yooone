@@ -57,7 +57,7 @@ export default function MasterPlanSection({ onOpenLightbox }) {
 
             <button 
               className="btn btn-gold"
-              onClick={() => onOpenLightbox('./assets/master-plan-web.jpg', 'YOO ONE Master Layout Plan (6.75 Acres)')}
+              onClick={() => onOpenLightbox(`${import.meta.env.BASE_URL}assets/master-plan-web.jpg`, 'YOO ONE Master Layout Plan (6.75 Acres)')}
             >
               <ZoomIn size={16} /> View High-Res Master Plan
             </button>
@@ -65,10 +65,10 @@ export default function MasterPlanSection({ onOpenLightbox }) {
 
           <div 
             className="plan-img-wrap"
-            onClick={() => onOpenLightbox('./assets/master-plan-web.jpg', 'YOO ONE Master Layout Plan (6.75 Acres)')}
+            onClick={() => onOpenLightbox(`${import.meta.env.BASE_URL}assets/master-plan-web.jpg`, 'YOO ONE Master Layout Plan (6.75 Acres)')}
             title="Click to view full 3x3ft master layout"
           >
-            <img src="./assets/master-plan-web.jpg" alt="YOO ONE Master Plan Layout" loading="lazy" />
+            <img src={`${import.meta.env.BASE_URL}assets/master-plan-web.jpg`} alt="YOO ONE Master Plan Layout" loading="lazy" />
             <div className="plan-img-hover">
               <ZoomIn size={20} />
               <span>Inspect Master Plan In Detail</span>
@@ -84,10 +84,10 @@ export default function MasterPlanSection({ onOpenLightbox }) {
               controls
               playsInline
               preload="metadata"
-              poster={activeVideo === 'trailer' ? './assets/hero-forest.jpg' : './assets/living-hall.jpg'}
+              poster={activeVideo === 'trailer' ? `${import.meta.env.BASE_URL}assets/hero-forest.jpg` : `${import.meta.env.BASE_URL}assets/living-hall.jpg`}
             >
               <source 
-                src={activeVideo === 'trailer' ? './assets/project-landscape-trailer.mp4' : './assets/3bhk-walkthrouh.mp4'} 
+                src={activeVideo === 'trailer' ? `${import.meta.env.BASE_URL}assets/project-landscape-trailer.mp4` : `${import.meta.env.BASE_URL}assets/3bhk-walkthrouh.mp4`} 
                 type="video/mp4" 
               />
               Your browser does not support the video tag.

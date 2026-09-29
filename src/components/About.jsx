@@ -10,8 +10,8 @@ export default function About({ onEnquireClick }) {
           <span className="eyebrow">{projectData.eyebrow}</span>
           <h2>A Gathering of Worlds. Designed by Sussanne Khan for YOO.</h2>
           <p>
-            YOO One brings international branded luxury to Pune’s most scenic hillside neighbourhood. 
-            Overlooking 200 acres of protected reserved forest, each residence combines global design sensibility 
+            YOO One brings international branded luxury to Pune’s most scenic hillside neighbourhood.
+            Overlooking 200 acres of protected reserved forest, each residence combines global design sensibility
             with nature, light, and complete freedom to personalize your private sanctuary.
           </p>
         </div>
@@ -19,12 +19,12 @@ export default function About({ onEnquireClick }) {
         <div className="about-grid">
           <div className="about-text">
             <p className="lead">
-              Every home at YOO One begins with fresh forest air, abundant daylight, and the prestigious 
+              Every home at YOO One begins with fresh forest air, abundant daylight, and the prestigious
               international design philosophy curated by Creative Director <b>Sussanne Khan for YOO</b>.
             </p>
             <p>
-              Set within an expansive 6.75-acre private development at NIBM, YOO One is conceived for those 
-              who refuse to settle for ordinary. Here, floor-to-ceiling French windows dissolve the boundary between 
+              Set within an expansive 6.75-acre private development at NIBM, YOO One is conceived for those
+              who refuse to settle for ordinary. Here, floor-to-ceiling French windows dissolve the boundary between
               sumptuous interior living and an endless canopy of green, ensuring your perspective is permanently elevated.
             </p>
 
@@ -68,7 +68,7 @@ export default function About({ onEnquireClick }) {
 
           <div className="about-img-box">
             <div className="about-main-img">
-              <img src="./assets/hero-forest.jpg" alt="YOO ONE Pune forest panorama" />
+              <img src={`${import.meta.env.BASE_URL}assets/hero-forest.jpg`} alt="YOO ONE Pune forest panorama" />
             </div>
             <div className="about-badge-float">
               <div className="badge-gold">Phase 1 Sold Out</div>

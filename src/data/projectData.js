@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL;
+
 export const projectData = {
   name: "YOO ONE",
   tagline: "Tower 2 – Serenity | NIBM, Pune",
@@ -13,25 +15,25 @@ export const projectData = {
   
   heroSlides: [
     {
-      image: "./assets/hero-forest.jpg",
+      image: `${BASE}assets/hero-forest.jpg`,
       title: "Forest View 3.5 & 4.5 Bed Homes",
       subtitle: "Surrounded by 200 Acres of Protected Reserved Forest",
       alt: "YOO ONE Towers amidst 200 acres forest view"
     },
     {
-      image: "./assets/building-exterior.jpg",
+      image: `${BASE}assets/building-exterior.jpg`,
       title: "Iconic Architectural Presence",
       subtitle: "Master Planned by Morphogenesis & Tricon",
       alt: "YOO ONE building exterior elevation"
     },
     {
-      image: "./assets/rooftop-pool.jpg",
+      image: `${BASE}assets/rooftop-pool.jpg`,
       title: "Infinity-Edge Horizon Pool",
       subtitle: "Where Water, Sky and Forest Horizon Merge",
       alt: "Rooftop infinity edge swimming pool"
     },
     {
-      image: "./assets/rooftop-terrace.jpg",
+      image: `${BASE}assets/rooftop-terrace.jpg`,
       title: "1.5-Acre Rooftop Sky Bar & Terrace",
       subtitle: "Pune's Most Exclusive Sky-High Entertainment Realm",
       alt: "1.5 Acre Rooftop Sky Bar & Terrace"
@@ -60,7 +62,7 @@ export const projectData = {
       bedrooms: "3 Bedrooms + Study",
       toilets: "3 Bathrooms",
       view: "Forest & Valley View",
-      planImg: "./assets/plan-3bhk-s03.png",
+      planImg: `${BASE}assets/plan-3bhk-s03.png`,
       description: "Thoughtfully configured layout featuring expansive living-dining space, dedicated study/work room, master bedroom with panoramic balcony, and complete privacy."
     },
     {
@@ -75,7 +77,7 @@ export const projectData = {
       bedrooms: "3.5 Bed + Powder Room",
       toilets: "4 Bathrooms",
       view: "Sahyadri Hills & Central Podium",
-      planImg: "./assets/plan-3bhk-s01.png",
+      planImg: `${BASE}assets/plan-3bhk-s01.png`,
       description: "Generously proportioned residences offering expansive double-balcony layouts, personal lounge area, walk-in dresser provisions, and floor-to-ceiling French windows."
     },
     {
@@ -90,7 +92,7 @@ export const projectData = {
       bedrooms: "4 Bedrooms + Servant/Study",
       toilets: "5 Bathrooms",
       view: "270° Forest & Skyline Panorama",
-      planImg: "./assets/plan-4bhk-s01.png",
+      planImg: `${BASE}assets/plan-4bhk-s01.png`,
       description: "Our crowning residences with grand entrance foyer, massive master suite, dedicated staff quarters, and floor-to-ceiling glass providing seamless forest panoramas."
     }
   ],
@@ -100,7 +102,7 @@ export const projectData = {
       level: "Level 03 — Sky Realm",
       title: "Above the Ordinary",
       subtitle: "1.5 Acres of Rooftop Luxury in the Sky",
-      image: "./assets/rooftop-terrace.jpg",
+      image: `${BASE}assets/rooftop-terrace.jpg`,
       desc: "Rise above the city's chaos into an elevated world of fresh mountain air, endless sunsets and peaceful moments overlooking 200 acres of forest greens.",
       amenities: [
         "Infinity-Edge Horizon Swimming Pool",
@@ -115,7 +117,7 @@ export const projectData = {
       level: "Level 02 — Podium Realm",
       title: "Wellness & Togetherness",
       subtitle: "Where Every Evening Becomes a Memory",
-      image: "./assets/amenities-overview.jpg",
+      image: `${BASE}assets/amenities-overview.jpg`,
       desc: "A vehicle-free realm dedicated to healthy holistic living, community interaction, and natural play spaces surrounded by oxygen-generating plantations.",
       amenities: [
         "Globally-Inspired Luxury Wellness Spa",
@@ -130,7 +132,7 @@ export const projectData = {
       level: "Level 01 — Ground Realm",
       title: "8,500 Sq.Ft Clubhouse & Sport",
       subtitle: "Where Childhood and Community Flourish",
-      image: "./assets/hero-forest.jpg",
+      image: `${BASE}assets/hero-forest.jpg`,
       desc: "An expansive ground oasis featuring grand clubhouse lounges, professional sporting facilities, pet parks, and lush botanical gardens.",
       amenities: [
         "8,500 sq.ft International Designer Clubhouse",
@@ -145,37 +147,37 @@ export const projectData = {
 
   gallery: [
     {
-      image: "./assets/hero-forest.jpg",
+      image: `${BASE}assets/hero-forest.jpg`,
       title: "Forest Backdrop",
       category: "Exterior & Nature",
       caption: "Panoramic views of 200 acres of reserved forest and Sahyadri Hills"
     },
     {
-      image: "./assets/building-exterior.jpg",
+      image: `${BASE}assets/building-exterior.jpg`,
       title: "Tower Elevation",
       category: "Exterior & Nature",
       caption: "Contemporary international facade designed by Morphogenesis"
     },
     {
-      image: "./assets/rooftop-pool.jpg",
+      image: `${BASE}assets/rooftop-pool.jpg`,
       title: "Infinity Pool",
       category: "Rooftop Realm",
       caption: "Infinity-edge pool dissolving boundaries between water and forest"
     },
     {
-      image: "./assets/rooftop-terrace.jpg",
+      image: `${BASE}assets/rooftop-terrace.jpg`,
       title: "1.5-Acre Sky Bar",
       category: "Rooftop Realm",
       caption: "Exclusive rooftop terrace and sunset dining lounge"
     },
     {
-      image: "./assets/living-hall.jpg",
+      image: `${BASE}assets/living-hall.jpg`,
       title: "Grand Living Hall",
       category: "Interiors",
       caption: "Interior styling inspiration by Sussanne Khan for YOO"
     },
     {
-      image: "./assets/french-windows.jpg",
+      image: `${BASE}assets/french-windows.jpg`,
       title: "Floor-to-Ceiling Windows",
       category: "Interiors",
       caption: "Seamless light and uninterrupted green perspective"

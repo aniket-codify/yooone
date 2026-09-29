@@ -19,7 +19,7 @@ export default function LocationSection() {
         <div className="connect-grid">
           <div>
             <div className="connect-img-box">
-              <img src="./assets/building-exterior.jpg" alt="YOO ONE NIBM Pune Location" loading="lazy" />
+              <img src={`${import.meta.env.BASE_URL}assets/building-exterior.jpg`} alt="YOO ONE NIBM Pune Location" loading="lazy" />
             </div>
             <div style={{
               background: 'var(--white)',

@@ -27,7 +27,7 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
       <div className="wrap">
         <div className="enquiry-container">
           <div className="enquiry-img-col">
-            <img src="./assets/rooftop-pool.jpg" alt="Schedule site visit at YOO ONE" loading="lazy" />
+            <img src={`${import.meta.env.BASE_URL}assets/rooftop-pool.jpg`} alt="Schedule site visit at YOO ONE" loading="lazy" />
             <div className="enquiry-img-overlay">
               <span className="eyebrow" style={{ color: '#e7c789' }}>Private VIP Site Visit</span>
               <h3>Experience YOO ONE in Person</h3>
