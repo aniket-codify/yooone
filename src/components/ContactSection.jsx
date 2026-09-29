@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, Phone, Calendar, Clock, Sparkles } from 'lucide-react';
 import { projectData } from '../data/projectData';
+import { submitEnquiry } from '../firebase';
 
 export default function ContactSection({ initialConfig = '3.5 BHK' }) {
   const [name, setName] = useState('');
@@ -11,15 +12,24 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate enquiry submission
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 700);
+    const leadData = {
+      name: name.trim(),
+      phone: phone.trim(),
+      email: email.trim() || null,
+      configuration: config,
+      preferredDate: date || null,
+      submittedFrom: window.location.href
+    };
+
+    // Store in Firestore collection 'yoooneNibm'
+    await submitEnquiry(leadData);
+
+    setLoading(false);
+    setSubmitted(true);
   };
 
   return (

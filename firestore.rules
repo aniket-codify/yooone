@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allows website visitors to submit site visit leads to yoooneNibm
+    match /yoooneNibm/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+    
+    // Fallback rule for other future project collections under Monarch Properties
+    match /{projectCollection}/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}
