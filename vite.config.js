@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Exact base path for https://aniket-codify.github.io/yooone/
-  base: '/yooone/',
+  // Root base path for custom domain https://yooone.in/
+  base: '/',
   build: {
     outDir: 'docs',
     emptyOutDir: true
