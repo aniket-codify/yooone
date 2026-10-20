@@ -95,7 +95,7 @@ export default function MasterPlanSection({ onOpenLightbox }) {
           </div>
 
           <div className="video-details">
-            <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+            <div className="video-toggle-group">
               <button 
                 className={`btn ${activeVideo === 'trailer' ? 'btn-gold' : 'btn-line-dark'}`}
                 style={{ padding: '8px 16px', fontSize: '11.5px' }}

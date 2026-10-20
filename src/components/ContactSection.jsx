@@ -42,7 +42,7 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
               <span className="eyebrow" style={{ color: '#e7c789' }}>Private VIP Site Visit</span>
               <h3>Experience YOO ONE in Person</h3>
               <p>Walk through our fully furnished ready show residence and view the Sahyadri forest panorama firsthand.</p>
-              <div style={{ marginTop: '16px', display: 'flex', gap: '16px', fontSize: '13px', color: '#e7c789' }}>
+              <div style={{ marginTop: '16px', display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '13px', color: '#e7c789' }}>
                 <span>✓ Private Valet Parking</span>
                 <span>✓ Direct Lounge Concierge</span>
               </div>

@@ -40,18 +40,7 @@ export default function Amenities({ onEnquireClick }) {
         </div>
 
         {/* Feature Highlight Strip */}
-        <div style={{
-          marginTop: '60px',
-          background: 'var(--ink)',
-          borderRadius: 'var(--radius-md)',
-          padding: '36px 40px',
-          border: '1px solid var(--gold-border)',
-          color: 'var(--cream)',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '28px',
-          alignItems: 'center'
-        }}>
+        <div className="amenity-highlight-strip">
           <div>
             <div style={{ color: 'var(--gold-bright)', fontSize: '24px', fontFamily: 'Cormorant Garamond, serif', fontWeight: '600', marginBottom: '4px' }}>
               1.5-Acre Sky Realm

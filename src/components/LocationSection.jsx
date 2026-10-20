@@ -103,12 +103,12 @@ export default function LocationSection() {
               </ul>
             </div>
 
-            <div className="landmark-cat-card" style={{ gridColumn: 'span 2' }}>
+            <div className="landmark-cat-card landmark-cat-full">
               <h4>
                 <Compass size={18} />
                 <span>Transit &amp; Key Corridors</span>
               </h4>
-              <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }}>
+              <ul className="transit-list">
                 {projectData.connectivity.transit.map((item, i) => (
                   <li key={i}>
                     <span>{item.name}</span>
