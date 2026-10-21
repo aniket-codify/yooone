@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2, Phone, Calendar, Clock, Sparkles } from 'lucide-react';
 import { projectData } from '../data/projectData';
 import { submitEnquiry } from '../firebase';
+import { trackGoogleAdsLeadConversion } from '../utils/analytics';
 
 export default function ContactSection({ initialConfig = '3.5 BHK' }) {
   const [name, setName] = useState('');
@@ -11,10 +12,12 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
   const [date, setDate] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage('');
 
     const leadData = {
       name: name.trim(),
@@ -26,10 +29,22 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
     };
 
     // Store in Firestore collection 'yoooneNibm'
-    await submitEnquiry(leadData);
+    const result = await submitEnquiry(leadData);
 
     setLoading(false);
-    setSubmitted(true);
+
+    if (result && result.success) {
+      // Trigger Google Ads conversion event only upon verified successful database write
+      trackGoogleAdsLeadConversion({
+        transactionId: result.id, // Firestore document ID used to deduplicate conversions
+        email: leadData.email,
+        phone: leadData.phone,
+      });
+
+      setSubmitted(true);
+    } else {
+      setErrorMessage(`We could not process your request at this time. Please try again or call us at ${projectData.phone}`);
+    }
   };
 
   return (
@@ -72,6 +87,7 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
                       setName('');
                       setPhone('');
                       setEmail('');
+                      setErrorMessage('');
                     }}
                   >
                     Submit Another Request
@@ -145,6 +161,21 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
                     onChange={(e) => setDate(e.target.value)}
                   />
                 </div>
+
+                {errorMessage && (
+                  <div style={{ 
+                    padding: '10px 14px', 
+                    background: 'rgba(239, 68, 68, 0.1)', 
+                    border: '1px solid rgba(239, 68, 68, 0.4)', 
+                    color: '#f87171', 
+                    borderRadius: '4px', 
+                    fontSize: '13px', 
+                    marginBottom: '12px', 
+                    textAlign: 'center' 
+                  }}>
+                    {errorMessage}
+                  </div>
+                )}
 
                 <button 
                   type="submit" 
