@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2, Phone, Calendar, Clock, Sparkles } from 'lucide-react';
 import { projectData } from '../data/projectData';
 import { submitEnquiry } from '../firebase';
-import { trackGoogleAdsLeadConversion } from '../utils/analytics';
+import { trackEnquiryConversion } from '../utils/googleAds';
 
 export default function ContactSection({ initialConfig = '3.5 BHK' }) {
   const [name, setName] = useState('');
@@ -34,9 +34,9 @@ export default function ContactSection({ initialConfig = '3.5 BHK' }) {
     setLoading(false);
 
     if (result && result.success) {
-      // Trigger Google Ads conversion event only upon verified successful database write
-      trackGoogleAdsLeadConversion({
-        transactionId: result.id, // Firestore document ID used to deduplicate conversions
+      // Trigger Google Ads conversion event only upon verified successful database save
+      trackEnquiryConversion({
+        transactionId: result.id, // Firestore document ID to prevent duplicate conversion counts
         email: leadData.email,
         phone: leadData.phone,
       });
