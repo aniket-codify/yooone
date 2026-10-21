@@ -10,9 +10,9 @@ export const projectData = {
   status: "Under Construction (Show Flat Ready)",
   phone: "+91 83088 85555",
   phoneFormatted: "+91 83088 85555",
-  whatsappNumber: "918308885555",
+  whatsappNumber: "917745092959",
   address: "YOO ONE Sales Lounge, NIBM Road, Pune – 411048",
-  
+
   heroSlides: [
     {
       image: `${BASE}assets/hero-forest.jpg`,
